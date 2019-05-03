@@ -1,3 +1,3 @@
-from money.main import get_currency_rates
+from money.main import get_currency_rates, pretty_table
 
-print(get_currency_rates('inr'))
+pretty_table(get_currency_rates('usd')['rates'])
