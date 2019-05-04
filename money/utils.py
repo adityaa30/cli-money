@@ -32,10 +32,12 @@ class Currency:
         'SGD': 'Singapore Dollar',
         'THB': 'Thai Baht',
         'ZAR': 'South African Rand',
+        'EUR': 'Euro'
     }
 
     @classmethod  
     def get_full_form(cls, short_form):
+        short_form = short_form.upper()
         full_form = cls.short_to_full.get(short_form)
         return full_form if full_form is not None else short_form
     
