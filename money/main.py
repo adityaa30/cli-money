@@ -8,7 +8,8 @@ def get_currency_rates(base_currency):
     data = r.json()
     return data
 
-def pretty_table(rates):
+def pretty_table(rates, base_currency):
+    print('Base currency: {}'.format(base_currency))
     table = PrettyTable()
     table.field_names = ['Currency', 'Value']
     for key, value in rates.items():
