@@ -1,3 +1,5 @@
+from prettytable import PrettyTable
+
 class Currency:
     short_to_full = {
         'USD': 'US Dollar',
@@ -41,3 +43,13 @@ class Currency:
         full_form = cls.short_to_full.get(short_form)
         return full_form if full_form is not None else short_form
     
+    @classmethod
+    def display_keys(cls):
+        table = PrettyTable()
+        table.title = 'Currency Key List'
+        table.header = True
+        table.field_names = ['Key', 'Full Form']
+        for key, value in cls.short_to_full.items():
+            table.add_row([key, value])
+        
+        print(table)
