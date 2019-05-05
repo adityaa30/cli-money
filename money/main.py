@@ -18,8 +18,11 @@ def display_currency_rates(base_currency, time):
             base_currency=data['base'],
             date=data['date']
         )
-    except Exception as e:
-        print(e)
+    except KeyboardInterrupt:
+        print('Cancelled the request for currency rates')
+    except Exception:
+        print('Some error occurred. Please check your internet connection & retry')
+
 
 
 def pretty_table(rates, base_currency, date):
