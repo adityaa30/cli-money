@@ -53,3 +53,11 @@ class Currency:
             table.add_row([key, value])
         
         print(table)
+    
+    @classmethod
+    def validate_key(cls, key):
+        key = key.upper()
+        if key in cls.short_to_full.keys():
+            return True
+        else:
+            return False

@@ -2,16 +2,24 @@ import requests
 from prettytable import PrettyTable
 from money.utils import Currency
 
-def get_currency_rates(base_currency):
+def display_currency_rates(base_currency, time):
     """
     @param base_currency: Base currency for which the other currency rates are to
     be displayed
     """
     base_currency = base_currency.upper()
-    url = 'https://api.exchangeratesapi.io/latest?base={}'.format(base_currency)
-    r = requests.get(url=url)
-    data = r.json()
-    return data
+    url = 'https://api.exchangeratesapi.io/{}?base={}'.format(time, base_currency)
+    try:
+        r = requests.get(url=url)
+        data = r.json()
+
+        pretty_table(
+            rates=data['rates'],
+            base_currency=data['base'],
+            date=data['date']
+        )
+    except Exception as e:
+        print(e)
 
 
 def pretty_table(rates, base_currency, date):
