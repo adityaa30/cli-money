@@ -1,10 +1,10 @@
 from argparse import ArgumentParser
 
-from money.utils import Currency
-from money.main import display_currency_rates, pretty_table
+from utils import Currency
+from main import display_currency_rates, pretty_table
 
 # Create the ArgumentParser instance
-parser = ArgumentParser(prog='run.py')
+parser = ArgumentParser()
 
 # Create a mutually exclusive group as only one argument 
 # will be accepted at a time

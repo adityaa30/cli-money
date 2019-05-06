@@ -1,6 +1,6 @@
 import requests
 from prettytable import PrettyTable
-from money.utils import Currency
+from utils import Currency
 
 def display_currency_rates(base_currency, time):
     """
