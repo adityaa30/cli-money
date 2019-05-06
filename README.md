@@ -9,7 +9,8 @@
 
 + `git clone https://github.com/adityaa30/cli-money`
 + `cd cli-money`
-+ `python setup.py install`
++ `pip install -r requirements.txt`
++ `python setup.py`
 
 ### Usage
 
