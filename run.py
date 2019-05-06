@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 
-from utils import Currency
-from main import display_currency_rates, pretty_table
+from money.utils import Currency
+from money.main import display_currency_rates, pretty_table
 
 # Create the ArgumentParser instance
 parser = ArgumentParser()
