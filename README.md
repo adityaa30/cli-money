@@ -4,6 +4,8 @@
 
 > Made using the [Foreign exchange rates API](https://exchangeratesapi.io/) *with currency conversion*
 
+> Github repo of exchange rates API: [exchangeratesapi](https://github.com/exchangeratesapi/exchangeratesapi)
+
 
 ### Installation
 
@@ -21,4 +23,18 @@ optional arguments:
     -l, --list              List all the valid currency rates
     -b BASE, --base BASE    Base currency relative to which the currency rates are to be displayed
     -t TIME, --time TIME    Time of which the currency dates to be displayed (YYYY-MM-DD)
+```
+
+### Examples
++ Fetch all latest currency exchange rates taking base currency as Indian Rupee
+```bash
+python run.py --base=inr
+```
++ Fetch all latest currency exchange rates at a required time
+```bash
+python run.py --base=inr --time=2019-08-01
+```
++ List out all the possible currency codes
+```bash
+python run.py --list
 ```
