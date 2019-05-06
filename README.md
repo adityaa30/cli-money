@@ -10,12 +10,11 @@
 + `git clone https://github.com/adityaa30/cli-money`
 + `cd cli-money`
 + `pip install -r requirements.txt`
-+ `python setup.py`
 
 ### Usage
 
 ```
-usage: run.py [-h] [-l] [-b BASE] [-t TIME]
+usage: python run.py [-h] [-l] [-b BASE] [-t TIME]
 
 optional arguments:
     -h, --help              show this help message and exit
