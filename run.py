@@ -8,22 +8,24 @@ parser = ArgumentParser(prog='run.py')
 
 # Create a mutually exclusive group as only one argument 
 # will be accepted at a time
-group = parser.add_mutually_exclusive_group()
-
-group.add_argument(
-    '-b',
-    '--base',
-    action='store',
-    # type=str,
-    help='Base currency relative to which the currency rates are to be displayed'
-)
-
-group.add_argument(
+parser.add_argument(
     '-l',
     '--list', 
     action='store_true',
+    default=False,
     # type=bool,
-    help='List all the valid currency rates'
+    dest='list',
+    help='List all the valid currency rates',
+)
+
+parser.add_argument(
+    '-b',
+    '--base',
+    action='store',
+    default='INR',
+    # type=str,
+    dest='base',
+    help='Base currency relative to which the currency rates are to be displayed'
 )
 
 parser.add_argument(
@@ -31,7 +33,9 @@ parser.add_argument(
     '--time',
     action='store',
     default='latest',
-    help='Time of which the currency dates to be displayed (YYYY-MM-DD)'
+    # type=str,
+    dest='time',
+    help='Time of which the currency dates to be displayed (YYYY-MM-DD)',
 )
 
 args = parser.parse_args()
